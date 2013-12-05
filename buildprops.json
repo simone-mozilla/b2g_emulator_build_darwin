@@ -1,0 +1,38 @@
+{
+    "properties": {
+        "base_bundle_urls": "['http://ftp.mozilla.org/pub/mozilla.org/firefox/bundles']",
+        "base_mirror_urls": "['http://hg-internal.dmz.scl3.mozilla.com']",
+        "basedir": "/Users/cltbld/b2g_build/build-dir",
+        "branch": "mozilla-central",
+        "buildername": "b2g_mozilla-central_emulator_dep",
+        "buildid": "20131112184405",
+        "buildnumber": 97,
+        "builduid": "a6610df53d7b442aba89c773e8e8c104",
+        "compare_locales_revision": "1fc4e9bc8287",
+        "gaia_revision": "9abc79e45a7283a557f177a3f9b54bec2668a2b8",
+        "gecko_revision": "7b014f0f3b03",
+        "hgurl": "http://hg.mozilla.org/",
+        "master": "http://buildbot-master64.srv.releng.usw2.mozilla.com:8001/",
+        "mock_target": "None",
+        "platform": "emulator",
+        "product": "b2g",
+        "project": "",
+        "repo_path": "mozilla-central",
+        "repository": "",
+        "revision": "7b014f0f3b03",
+        "scheduler": "b2g_mozilla-central-b2g",
+        "script_repo_revision": "7034f553e9cd",
+        "slavename": "bld-lion-r5-087",
+        "upload_ssh_key": "ffxbld_dsa",
+        "upload_ssh_server": "stage.mozilla.org",
+        "upload_ssh_user": "ffxbld"
+    },
+    "sourcestamp": {
+        "branch": null,
+        "changes": [],
+        "hasPatch": false,
+        "project": "",
+        "repository": "",
+        "revision": null
+    }
+}

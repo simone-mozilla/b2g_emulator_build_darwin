@@ -1,0 +1,50 @@
+diff --git a/scripts/b2g_build.py b/scripts/b2g_build.py
+--- a/scripts/b2g_build.py
++++ b/scripts/b2g_build.py
+@@ -562,7 +562,7 @@ class B2GBuild(LocalesMixin, MockMixin, 
+             # self.run_command([repo, "sync", "--quiet"], cwd=dirs['work_dir'], halt_on_failure=True)
+             # XXX Workaround git failing to clone some repositories when
+             # running in quiet mode. See bug 857158
+-            self.run_command(['script', '-q', '-c', '%s sync' % repo], cwd=dirs['work_dir'], halt_on_failure=True)
++            self.run_command(['script', '-q', '/dev/null', repo, 'sync'], cwd=dirs['work_dir'], halt_on_failure=True)
+ 
+             # output our sources.xml, make a copy for update_sources_xml()
+             self.run_command(["./gonk-misc/add-revision.py", "-o", "sources.xml", "--force", ".repo/manifest.xml"], cwd=dirs["work_dir"], halt_on_failure=True)
+@@ -915,7 +915,7 @@ class B2GBuild(LocalesMixin, MockMixin, 
+ 
+         self.write_b2g_config()
+ 
+-        if 'mock_target' in gecko_config:
++        if False:
+             # initialize mock
+             self.setup_mock(gecko_config['mock_target'], gecko_config['mock_packages'], gecko_config.get('mock_files'))
+             if self.config['ccache']:
+@@ -927,7 +927,9 @@ class B2GBuild(LocalesMixin, MockMixin, 
+         else:
+             if self.config['ccache']:
+                 self.run_command('ccache -z', cwd=dirs['work_dir'], env=env)
+-            retval = self.run_command(cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
++            retval = self.run_command(['./build.sh', 'droid'], cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
++            retval = self.run_command(['./build.sh', 'package-emulator'], cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
++            retval = self.run_command(['./build.sh', 'package-tests'], cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+             if self.config['ccache']:
+                 self.run_command('ccache -s', cwd=dirs['work_dir'], env=env)
+ 
+@@ -949,7 +951,7 @@ class B2GBuild(LocalesMixin, MockMixin, 
+ 
+         self.write_b2g_config()
+ 
+-        if 'mock_target' in gecko_config:
++        if False:
+             # initialize mock
+             self.setup_mock(gecko_config['mock_target'], gecko_config['mock_packages'], gecko_config.get('mock_files'))
+             retval = self.run_mock_command(gecko_config['mock_target'], cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+@@ -963,7 +965,7 @@ class B2GBuild(LocalesMixin, MockMixin, 
+             # Upload symbols
+             self.info("Uploading symbols")
+             cmd = ['./build.sh', 'uploadsymbols']
+-            if 'mock_target' in gecko_config:
++            if False:
+                 retval = self.run_mock_command(gecko_config['mock_target'], cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)
+             else:
+                 retval = self.run_command(cmd, cwd=dirs['work_dir'], env=env, error_list=B2GMakefileErrorList)

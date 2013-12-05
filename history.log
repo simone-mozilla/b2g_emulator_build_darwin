@@ -1,0 +1,136 @@
+    1  ls
+    2  pwd
+    3  mkdir b2g_build
+    4  cd b2g_build/
+    5  vi build.sh
+    6  ls
+    7  chmod +x build.sh 
+    8  vi build.sh 
+    9  vi build.sh 
+   10  vi buildprops.json
+   11  cat > buildprops.json << EOF
+   12  vi buildprops.json
+   13  ./build.sh 
+   14  vi build.sh 
+   15  ./build.sh 
+   16  pwd
+   17  vi build.sh 
+   18  vi buildprops.json 
+   19  ./build.sh 
+   20  pwd
+   21  git clone https://github.com/gitster/git
+   22  cd git/
+   23  make configure
+   24  ./configure 
+   25  make --prefix=$(pwd) install
+   26  make
+   27  make clean
+   28  git status
+   29  git branch
+   30  git tag -l
+   31  git -version
+   32  git --version
+   33  git checkout v1.7.9.7
+   34  make configure
+   35  ./configure
+   36  make
+   37  sudo make install
+   38  su -
+   39  su
+   40  pwd
+   41  cd ..
+   42  ./build.sh 
+   43  pwd
+   44  ls
+   45  vi build-dir/scripts/scripts/b2g_build.py 
+   46  git diff
+   47  cd build-dir/scripts/
+   48  hg diff
+   49  hg diff > ~/b2g_build/fixes.patch
+   50  cd
+   51  cd b2g_build/
+   52  vi build.sh 
+   53  ./build.sh 
+   54  /Users/cltbld/b2g_build/build-dir/build/repo sync
+   55  cd /Users/cltbld/b2g_build/build-dir/build
+   56  repo sync
+   57  ./repo sync
+   58  cd gi
+   59  pwd
+   60  cd ..
+   61  cd ..
+   62  cd git/
+   63  make clean
+   64  git status
+   65  git branch -l
+   66  git tag -l
+   67  git checkout v1.8.4.4
+   68  make configure
+   69  ./configure
+   70  make
+   71  su
+   72  git --version
+   73  cd ~/b2g_build/build-dir/build/
+   74  ./repo sync
+   75  ls
+   76  pwd
+   77  cd ../..
+   78  ls
+   79  cat build.sh 
+   80  ./build.sh 
+   81  vi build-dir/scripts/scripts/b2g_build.py 
+   82  cd build-dir/scripts/
+   83  hg diff
+   84  hg diff > ../../fixes.patch 
+   85  cd ../..
+   86  vi build.sh 
+   87  vi build.sh 
+   88  ./build.sh 
+   89  vi build.sh 
+   90  vi build-dir/scripts/scripts/b2g_build.py 
+   91  (cd build-dir/scripts && hg diff > ../../fixes.patch )
+   92  cat fixes.patch 
+   93  ./build.sh 
+   94  ls
+   95  exit
+   96  ls
+   97  uname -a
+   98  screen -rx
+   99  screen
+  100  pwd
+  101  ls
+  102  cd b2g_build/
+  103  vi build.sh 
+  104  history | grep clone
+  105  vi build.sh 
+  106  cd
+  107  cd git
+  108  cd b2g_build/git/
+  109  git branch
+  110  git status
+  111  git tag -l
+  112  cd
+  113  cd b2g_build/
+  114  vi build
+  115  vi build.sh 
+  116  screen -rx
+  117  exit
+  118  #hi
+  119  md5 Downloads/command_line_tools_for_xcode_june_2012.dmg 
+  120  ls
+  121  rm command_line_tools_for_xcode_june_2012.dmg 
+  122  TMPMOUNT=`/usr/bin/mktemp -d /tmp/clitools.XXXX`
+  123  hdiutil attach "$TOOLS" -mountpoint "$TMPMOUNT"
+  124  TOOLS=clitools.dmg
+  125  if [ ! -f "$TOOLS" 
+  126  hdiutil attach "$TOOLS" -mountpoint "$TMPMOUNT"
+  127  TOOLS=Downloads/command_line_tools_for_xcode_june_2012.dmg 
+  128  hdiutil attach "$TOOLS" -mountpoint "$TMPMOUNT"
+  129  installer -pkg "$(find $TMPMOUNT -name '*.mpkg')" -target /
+  130  su -c 'installer -pkg "$(find $TMPMOUNT -name '*.mpkg')" -target /'
+  131  su
+  132  whoami
+  133  ls
+  134  cd b2g_build/
+  135  cat build.sh 
+  136  history > history.log
