@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "$(dirname "${0}")"
-cp -pr Cellar Cellar2
-sudo mv Cellar2 /usr/local/Cellar
+[ ! -d Cellar2 ] && cp -pr Cellar Cellar2
+[ ! -d /usr/local/Cellar ] && sudo mv Cellar2 /usr/local/Cellar
 
 sudo rm '/usr/local/bin/git'
 
