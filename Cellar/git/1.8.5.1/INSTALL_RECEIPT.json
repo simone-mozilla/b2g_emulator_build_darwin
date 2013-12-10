@@ -1,0 +1,1 @@
+{"compiler":"clang","built_as_bottle":true,"HEAD":"f19bcfc5cb9a23b3b1863ca9b007c3fd89f7dfa8","poured_from_bottle":true,"tapped_from":"mxcl/master","stdlib":null,"unused_options":["--with-brewed-openssl","--with-blk-sha1","--with-pcre","--with-persistent-https","--without-completions","--with-brewed-curl","--with-gettext"],"time":1386544964,"used_options":[]}
