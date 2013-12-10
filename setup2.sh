@@ -7,7 +7,8 @@ sudo rm -f '/usr/local/bin/git'
 
 ./all_links.sh
 
-sudo ln -s '/tools/python27/bin/python2.7' '/usr/local/bin/python'
+sudo ln -f -s 'gtar' '/usr/local/bin/tar'
+sudo ln -f -s 'python2.7' '/usr/local/bin/python'
 
 cat buildprops.json  | sed 's/slavename": ".*/slavename": "'"$(hostname -s)"'",/' > xxx
 mv xxx buildprops.json
