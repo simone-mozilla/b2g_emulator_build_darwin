@@ -9,6 +9,7 @@ sudo mv Cellar2 /usr/local/Cellar
 
 sudo ln -f -s 'gtar' '/usr/local/bin/tar'
 sudo ln -f -s 'python2.7' '/usr/local/bin/python'
+sudo ln -f -s 'gcc-4.6' '/usr/local/bin/gcc'
 
 cat buildprops.json  | sed 's/slavename": ".*/slavename": "'"$(hostname -s)"'",/' > xxx
 mv xxx buildprops.json
