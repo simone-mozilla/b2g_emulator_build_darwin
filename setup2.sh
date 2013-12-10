@@ -12,4 +12,4 @@ cat buildprops.json  | sed 's/slavename": ".*/slavename": "'"$(hostname -s)"'",/
 mv xxx buildprops.json
 
 rm -rf ~/.ssh
-scp -r bld-lion-r5-085:.ssh ~
+scp -r bld-lion-r5-092:.ssh ~
