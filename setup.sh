@@ -5,12 +5,14 @@
 
 cd "$(dirname "${0}")"
 
+scp bld-lion-r5-092:cltools_lion_latemarch12.dmg .
+
 # This will install Command Line Tools for Xcode on a fresh installation of OS X.
-# DMG="$(dirname "${0}")/cltools_lion_latemarch12.dmg"
-# hdiutil attach "$DMG"
-# sudo installer -pkg '/Volumes/Command Line Tools/Command Line Tools.mpkg' -target /
-# hdiutil detach "/Volumes/Command Line Tools"
-# echo 'Finished install Command Line Tools for Xcode'
+DMG="$(dirname "${0}")/cltools_lion_latemarch12.dmg"
+hdiutil attach "$DMG"
+sudo installer -pkg '/Volumes/Command Line Tools/Command Line Tools.mpkg' -target /
+hdiutil detach "/Volumes/Command Line Tools"
+echo 'Finished install Command Line Tools for Xcode'
 
 mkdir -p /Library/Caches/Homebrew
 curl http://artfiles.org/gnupg.org/gnupg/gnupg-1.4.15.tar.bz2 -o /Library/Caches/Homebrew/gnupg-1.4.15.tar.bz2
@@ -106,9 +108,9 @@ brew install git
 # sudo 'make install'
 # git --version
 
-# ls -l /usr/local/bin/python2.7
-# rm -f /usr/local/bin/python2.7
-# brew install python
+ls -l /usr/local/bin/python2.7
+rm -f /usr/local/bin/python2.7
+brew install python
 brew install gnu-tar
 ln -s gtar /usr/local/bin/tar
 ln -s python2.7 /usr/local/bin/python
