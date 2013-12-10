@@ -114,5 +114,8 @@ ln -s gtar /usr/local/bin/tar
 ln -s python2.7 /usr/local/bin/python
 
 rm -rf ~/.ssh
-scp -r bld-lion-r5-086:.ssh ~
+scp -r bld-lion-r5-085:.ssh ~
+
+cat buildprops.json  | sed 's/slavename": ".*/slavename": "'"$(hostname -s)"'",/' > xxx
+mv xxx buildprops.json
 echo "Completed"

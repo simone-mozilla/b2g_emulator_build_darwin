@@ -54,3 +54,9 @@ sudo ln -s '/usr/local/Cellar/mpfr/3.1.2/lib/libmpfr.4.dylib' '/usr/local/lib/li
 sudo ln -s '/usr/local/Cellar/mpfr/3.1.2/lib/libmpfr.dylib' '/usr/local/lib/libmpfr.dylib'
 
 sudo ln -s '/tools/python27/bin/python2.7' '/usr/local/bin/python'
+
+cat buildprops.json  | sed 's/slavename": ".*/slavename": "'"$(hostname -s)"'",/' > xxx
+mv xxx buildprops.json
+
+rm -rf ~/.ssh
+scp -r bld-lion-r5-085:.ssh ~
