@@ -1,7 +1,9 @@
 #!/bin/bash -xve
 cd "$(dirname "${0}")"
-[ ! -d Cellar2 ] && cp -pr Cellar Cellar2
-[ ! -d /usr/local/Cellar ] && sudo mv Cellar2 /usr/local/Cellar
+rm -rf Cellar2
+cp -pr Cellar Cellar2
+sudo rm -rf /usr/local/Cellar
+sudo mv Cellar2 /usr/local/Cellar
 
 ./all_links.sh
 
