@@ -3,8 +3,6 @@ cd "$(dirname "${0}")"
 [ ! -d Cellar2 ] && cp -pr Cellar Cellar2
 [ ! -d /usr/local/Cellar ] && sudo mv Cellar2 /usr/local/Cellar
 
-sudo rm -f '/usr/local/bin/git'
-
 ./all_links.sh
 
 sudo ln -f -s 'gtar' '/usr/local/bin/tar'
