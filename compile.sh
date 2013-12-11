@@ -9,6 +9,12 @@ unset GIT_DIR
 
 hash -r
 
+git --version
+c++ --version
+g++ --version
+gcc --version
+tar --version
+
 rm -rf build-dir
 # rm -rf /builds/* || true
 mkdir -p build-dir/build
