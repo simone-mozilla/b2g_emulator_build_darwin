@@ -17,7 +17,7 @@ old_library='libsupc++.a'
 inherited_linker_flags=' '
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/private/tmp/gcc-4.6-6oEd/gcc-4.6.3/build/x86_64-apple-darwin11.2.0/libstdc++-v3/src -L/private/tmp/gcc-4.6-6oEd/gcc-4.6.3/build/x86_64-apple-darwin11.2.0/libstdc++-v3/src/.libs'
+dependency_libs=' -L/private/tmp/gcc-4.6-e4nz/gcc-4.6.3/build/x86_64-apple-darwin11.2.0/libstdc++-v3/src -L/private/tmp/gcc-4.6-e4nz/gcc-4.6.3/build/x86_64-apple-darwin11.2.0/libstdc++-v3/src/.libs'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''

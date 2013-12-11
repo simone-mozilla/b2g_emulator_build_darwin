@@ -33,14 +33,14 @@
 
 typedef struct
 {
-  unsigned char _x[64] 
-    __attribute__((__aligned__(8)));
+  unsigned char _x[44] 
+    __attribute__((__aligned__(4)));
 } omp_lock_t;
 
 typedef struct
 {
-  unsigned char _x[80] 
-    __attribute__((__aligned__(8)));
+  unsigned char _x[52] 
+    __attribute__((__aligned__(4)));
 } omp_nest_lock_t;
 #endif
 
