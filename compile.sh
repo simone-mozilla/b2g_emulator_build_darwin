@@ -11,12 +11,13 @@ hash -r
 
 git --version
 c++ --version
+which g++
 g++ --version
 gcc --version
 tar --version
 
 rm -rf build-dir
-# rm -rf /builds/* || true
+rm -rf /builds/* || true
 mkdir -p build-dir/build
 cd build-dir
 hg clone 'http://hg.mozilla.org/build/mozharness' scripts
@@ -31,5 +32,6 @@ echo
 echo 'Now running the build part!!!!'
 echo
 echo
+../apply_dev_patch.sh &
 'scripts/scripts/b2g_build.py' '--target' 'generic' '--config' 'b2g/releng-emulator.py' '--b2g-config-dir' 'emulator' '--gaia-languages-file' 'locales/languages_dev.json' '--gecko-languages-file' 'gecko/b2g/locales/all-locales'
 cat properties/*
