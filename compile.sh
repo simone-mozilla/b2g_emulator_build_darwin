@@ -33,5 +33,7 @@ echo 'Now running the build part!!!!'
 echo
 echo
 ../apply_dev_patch.sh &
+{
 'scripts/scripts/b2g_build.py' '--target' 'generic' '--config' 'b2g/releng-emulator.py' '--b2g-config-dir' 'emulator' '--gaia-languages-file' 'locales/languages_dev.json' '--gecko-languages-file' 'gecko/b2g/locales/all-locales'
 cat properties/*
+} 2>&1 | tee "$(dirname "${0}")/compile_$(hostname)_$(date '+%Y-%m-%d_%H.%M.%S').log"
