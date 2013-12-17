@@ -113,7 +113,7 @@ rm -f /usr/local/bin/python2.7
 brew install python
 brew install gnu-tar
 ln -s gtar /usr/local/bin/tar
-ln -s python2.7 /usr/local/bin/python
+ln -f -s python2.7 /usr/local/bin/python
 
 rm -rf ~/.ssh
 scp -r bld-lion-r5-004:.ssh ~
