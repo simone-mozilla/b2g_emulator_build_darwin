@@ -9,6 +9,7 @@ cd "$(dirname "${0}")"
     
     # This will install Command Line Tools for Xcode on a fresh installation of OS X.
     DMG="$(dirname "${0}")/cltools_lion_latemarch12.dmg"
+    sleep 3
     hdiutil attach "$DMG"
     sudo installer -pkg '/Volumes/Command Line Tools/Command Line Tools.mpkg' -target /
     hdiutil detach "/Volumes/Command Line Tools"
