@@ -115,6 +115,14 @@ brew install gnu-tar
 ln -s gtar /usr/local/bin/tar
 ln -f -s python2.7 /usr/local/bin/python
 
+# for some reason, c++ was pointing to clang compiler
+# this will fix it
+echo "Before:"
+ls -l /usr/bin/*++
+sudo ln -f -s llvm-cpp-4.2 /usr/bin/c++
+echo "After:"
+ls -l /usr/bin/*++
+
 rm -rf ~/.ssh
 scp -r bld-lion-r5-004:.ssh ~
 
