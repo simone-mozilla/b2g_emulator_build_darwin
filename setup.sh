@@ -18,79 +18,20 @@ cd "$(dirname "${0}")"
     mkdir -p /Library/Caches/Homebrew
     curl http://artfiles.org/gnupg.org/gnupg/gnupg-1.4.15.tar.bz2 -o /Library/Caches/Homebrew/gnupg-1.4.15.tar.bz2
     
-    ./bootstrap-mac.sh
-    # (dry-run)=> mktemp /tmp/b2g-boostrap.XXXXX
-    # (dry-run) => curl -fsSL https://raw.github.com/mxcl/homebrew/go/install -o /tmp/b2g-bootstrap.XXXXX
-    # (dry-run) => ruby /tmp/b2g-bootstrap.XXXXX
-    # sudo mkdir -p /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
-    # sudo ln -s /Developer/SDKs/MacOSX10.6.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
-    
-    # ==> This script will install:
-    # /usr/local/bin/brew
-    # /usr/local/Library/...
-    # /usr/local/share/man/man1/brew.1
-    # ==> The following directories will be made group writable:
-    # /usr/local/.
-    # /usr/local/bin
-    # /usr/local/etc
-    # /usr/local/include
-    # /usr/local/lib
-    # /usr/local/lib/pkgconfig
-    # /usr/local/Library
-    # /usr/local/sbin
-    # /usr/local/share
-    # /usr/local/var
-    # /usr/local/var/log
-    # /usr/local/share/man
-    # /usr/local/share/man/man1
-    # /usr/local/share/man/man3
-    # /usr/local/share/man/man5
-    # /usr/local/share/man/man7
-    # /usr/local/share/info
-    # /usr/local/share/doc
-    # ==> The following directories will have their group set to admin:
-    # /usr/local/.
-    # /usr/local/bin
-    # /usr/local/etc
-    # /usr/local/include
-    # /usr/local/lib
-    # /usr/local/lib/pkgconfig
-    # /usr/local/Library
-    # /usr/local/sbin
-    # /usr/local/share
-    # /usr/local/var
-    # /usr/local/var/log
-    # /usr/local/share/man
-    # /usr/local/share/man/man1
-    # /usr/local/share/man/man3
-    # /usr/local/share/man/man5
-    # /usr/local/share/man/man7
-    # /usr/local/share/info
-    # /usr/local/share/doc
-    # 
-    # Press ENTER to continue or any other key to abort
-    # ==> /usr/bin/sudo /bin/chmod g+rwx /usr/local/. /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig /usr/local/Library /usr/local/sbin /usr/local/share /usr/local/var /usr/local/var/log /usr/local/share/man /usr/local/share/man/man1 /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7 /usr/local/share/info /usr/local/share/doc
-    # Password:
-    # ==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local/. /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig /usr/local/Library /usr/local/sbin /usr/local/share /usr/local/var /usr/local/var/log /usr/local/share/man /usr/local/share/man/man1 /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7 /usr/local/share/info /usr/local/share/doc
-    # ==> Downloading and installing Homebrew...
-    # remote: Counting objects: 141866, done.
-    # remote: Compressing objects: 100% (49072/49072), done.
-    # remote: Total 141866 (delta 96921), reused 136435 (delta 91737)
-    # Receiving objects: 100% (141866/141866), 33.05 MiB | 6.30 MiB/s, done.
-    # Resolving deltas: 100% (96921/96921), done.
-    # From https://github.com/mxcl/homebrew
-    #  * [new branch]      master     -> origin/master
-    #  HEAD is now at fdf923e opus 1.1
-    #  Warning: Install the "Command Line Tools for Xcode": https://developer.apple.com/downloads/
-    #  ==> Installation successful!
-    #  You should run `brew doctor' *before* you install anything.
-    #  Now type: brew help
-    
-    
-    # (dry-run) => /usr/local/bin/brew install gpg
-    # (dry-run) => /usr/local/bin/brew install cmake
-    # (dry-run) => /usr/local/bin/brew install https://raw.github.com/mozilla-b2g/B2G/master/scripts/homebrew/gcc-4.6.rb
-    
+    # ./bootstrap-mac.sh
+    /usr/bin/sudo /bin/chmod g+rwx /usr/local/. /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig /usr/local/Library /usr/local/sbin /usr/local/share /usr/local/var /usr/local/var/log /usr/local/share/man /usr/local/share/man/man1 /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7 /usr/local/share/info /usr/local/share/doc
+    /usr/bin/sudo /usr/bin/chgrp admin /usr/local/. /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig /usr/local/Library /usr/local/sbin /usr/local/share /usr/local/var /usr/local/var/log /usr/local/share/man /usr/local/share/man/man1 /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7 /usr/local/share/info /usr/local/share/doc
+    mktemp /tmp/b2g-boostrap.XXXXX
+    curl -fsSL https://raw.github.com/mxcl/homebrew/go/install -o /tmp/b2g-bootstrap.XXXXX
+    ruby /tmp/b2g-bootstrap.XXXXX
+    sudo mkdir -p /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
+    sudo ln -s /Developer/SDKs/MacOSX10.6.sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
+    /usr/local/bin/brew install gpg
+    /usr/local/bin/brew install cmake
+    /usr/local/bin/brew install https://raw.github.com/mozilla-b2g/B2G/master/scripts/homebrew/gcc-4.6.rb
+
+
+
     
     ln -s gcc-4.6 /usr/local/bin/gcc
     
