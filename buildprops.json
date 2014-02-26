@@ -22,7 +22,7 @@
         "revision": "7b014f0f3b03",
         "scheduler": "b2g_mozilla-central-b2g",
         "script_repo_revision": "7034f553e9cd",
-        "slavename": "bld-lion-r5-087",
+        "slavename": "bld-lion-r5-086",
         "upload_ssh_key": "ffxbld_dsa",
         "upload_ssh_server": "stage.mozilla.org",
         "upload_ssh_user": "ffxbld"

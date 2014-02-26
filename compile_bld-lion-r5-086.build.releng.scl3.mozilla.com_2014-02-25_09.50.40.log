@@ -1,0 +1,267 @@
+dirname "${0}"
+++ dirname ./compile.sh
++ cd .
+pwd
+++ pwd
++ export PROPERTIES_FILE=/Users/cltbld/b2g_build/buildprops.json
++ PROPERTIES_FILE=/Users/cltbld/b2g_build/buildprops.json
++ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
++ PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
++ echo 'GIT_DIR='\'''\'''
+GIT_DIR=''
++ unset GIT_DIR
++ hash -r
++ git --version
+git version 1.8.5.1
++ c++ --version
+c++ (GCC) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
++ which g++
+/usr/local/bin/g++
++ g++ --version
+g++ (GCC) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
++ gcc --version
+gcc (GCC) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
++ tar --version
+tar (GNU tar) 1.27
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by John Gilmore and Jay Fenlason.
++ rm -rf build-dir
++ rm -rf /builds/ccache /builds/gapi.data /builds/git-shared /builds/hg-shared /builds/slave
+rm: /builds/ccache: Permission denied
+rm: /builds/gapi.data: Permission denied
+rm: /builds/git-shared: Permission denied
+rm: /builds/hg-shared: Permission denied
+rm: /builds/slave: Permission denied
++ true
++ mkdir -p build-dir/build
++ cd build-dir
++ hg clone http://hg.mozilla.org/build/mozharness scripts
+requesting all changes
+adding changesets
+adding manifests
+adding file changes
+added 2461 changesets with 4394 changes to 375 files (+1 heads)
+updating to branch default
+206 files updated, 0 files merged, 0 files removed, 0 files unresolved
++ cd scripts
++ hg update -C -r production
+30 files updated, 0 files merged, 0 files removed, 0 files unresolved
++ hg id -i
+48092ad907ef
++ hg import --no-commit ../../fixes.patch
+applying ../../fixes.patch
++ cd ..
++ mkdir -p /builds/git-shared/git
++ echo
+
++ echo
+
++ echo 'Now running the build part!!!!'
+Now running the build part!!!!
++ echo
+
++ echo
+
++ scripts/scripts/b2g_build.py --target generic --config b2g/releng-emulator.py --b2g-config-dir emulator --gaia-languages-file locales/languages_dev.json --gecko-languages-file gecko/b2g/locales/all-locales
++ ../apply_dev_patch.sh
+09:50:45     INFO - MultiFileLogger online at 20140225 09:50:45 in /Users/cltbld/b2g_build/build-dir
+09:50:45     INFO - Reading buildbot build properties...
+09:50:45     INFO - Using buildbot properties:
+09:50:45     INFO - {
+09:50:45     INFO -     "properties": {
+09:50:45     INFO -         "basedir": "/Users/cltbld/b2g_build/build-dir", 
+09:50:45     INFO -         "gaia_revision": "9abc79e45a7283a557f177a3f9b54bec2668a2b8", 
+09:50:45     INFO -         "base_mirror_urls": "['http://hg-internal.dmz.scl3.mozilla.com']", 
+09:50:45     INFO -         "buildnumber": 97, 
+09:50:45     INFO -         "slavename": "bld-lion-r5-086", 
+09:50:45     INFO -         "buildername": "b2g_mozilla-central_emulator_dep", 
+09:50:45     INFO -         "platform": "emulator", 
+09:50:45     INFO -         "master": "http://buildbot-master64.srv.releng.usw2.mozilla.com:8001/", 
+09:50:45     INFO -         "branch": "mozilla-central", 
+09:50:45     INFO -         "revision": "7b014f0f3b03", 
+09:50:45     INFO -         "upload_ssh_user": "ffxbld", 
+09:50:45     INFO -         "product": "b2g", 
+09:50:45     INFO -         "repository": "", 
+09:50:45     INFO -         "base_bundle_urls": "['http://ftp.mozilla.org/pub/mozilla.org/firefox/bundles']", 
+09:50:45     INFO -         "buildid": "20131112184405", 
+09:50:45     INFO -         "upload_ssh_key": "ffxbld_dsa", 
+09:50:45     INFO -         "scheduler": "b2g_mozilla-central-b2g", 
+09:50:45     INFO -         "script_repo_revision": "7034f553e9cd", 
+09:50:45     INFO -         "project": "", 
+09:50:45     INFO -         "compare_locales_revision": "1fc4e9bc8287", 
+09:50:45     INFO -         "gecko_revision": "7b014f0f3b03", 
+09:50:45     INFO -         "hgurl": "http://hg.mozilla.org/", 
+09:50:45     INFO -         "mock_target": "None", 
+09:50:45     INFO -         "upload_ssh_server": "stage.mozilla.org", 
+09:50:45     INFO -         "builduid": "a6610df53d7b442aba89c773e8e8c104", 
+09:50:45     INFO -         "repo_path": "mozilla-central"
+09:50:45     INFO -     }, 
+09:50:45     INFO -     "sourcestamp": {
+09:50:45     INFO -         "repository": "", 
+09:50:45     INFO -         "hasPatch": false, 
+09:50:45     INFO -         "project": "", 
+09:50:45     INFO -         "branch": null, 
+09:50:45     INFO -         "changes": [], 
+09:50:45     INFO -         "revision": null
+09:50:45     INFO -     }
+09:50:45     INFO - }
+09:50:45     INFO - Run as scripts/scripts/b2g_build.py --target generic --config b2g/releng-emulator.py --b2g-config-dir emulator --gaia-languages-file locales/languages_dev.json --gecko-languages-file gecko/b2g/locales/all-locales
+09:50:45     INFO - Dumping config to /Users/cltbld/b2g_build/build-dir/logs/localconfig.json.
+09:50:45     INFO - {'append_to_log': False,
+09:50:45     INFO -  'b2g_config_dir': 'emulator',
+09:50:45     INFO -  'base_work_dir': '/Users/cltbld/b2g_build/build-dir',
+09:50:45     INFO -  'buildbot_json_path': '/Users/cltbld/b2g_build/buildprops.json',
+09:50:45     INFO -  'ccache': True,
+09:50:45     INFO -  'clobberer_url': 'http://clobberer.pvt.build.mozilla.org/index.php',
+09:50:45     INFO -  'compare_locales_repo': 'https://hg.mozilla.org/build/compare-locales',
+09:50:45     INFO -  'compare_locales_rev': 'RELEASE_AUTOMATION',
+09:50:45     INFO -  'compare_locales_vcs': 'hgtool',
+09:50:45     INFO -  'config_files': ('b2g/releng-emulator.py',),
+09:50:45     INFO -  'default_actions': ('clobber',
+09:50:45     INFO -                      'checkout-sources',
+09:50:45     INFO -                      'get-blobs',
+09:50:45     INFO -                      'update-source-manifest',
+09:50:45     INFO -                      'build',
+09:50:45     INFO -                      'build-symbols',
+09:50:45     INFO -                      'make-updates',
+09:50:45     INFO -                      'prep-upload',
+09:50:45     INFO -                      'upload',
+09:50:45     INFO -                      'make-socorro-json',
+09:50:45     INFO -                      'upload-source-manifest'),
+09:50:45     INFO -  'default_vcs': 'hgtool',
+09:50:45     INFO -  'env': {'CCACHE_COMPRESS': '1',
+09:50:45     INFO -          'CCACHE_DIR': '/builds/ccache',
+09:50:45     INFO -          'CCACHE_UMASK': '002',
+09:50:45     INFO -          'GAIA_OPTIMIZE': '1',
+09:50:45     INFO -          'PATH': '/tools/python27/bin:%(PATH)s',
+09:50:45     INFO -          'POST_SYMBOL_UPLOAD_CMD': '/usr/local/bin/post-symbol-upload.py',
+09:50:45     INFO -          'SYMBOL_SERVER_HOST': 'symbolpush.mozilla.org',
+09:50:45     INFO -          'SYMBOL_SERVER_PATH': '/mnt/netapp/breakpad/symbols_b2g/',
+09:50:45     INFO -          'SYMBOL_SERVER_SSH_KEY': '/home/mock_mozilla/.ssh/b2gbld_dsa',
+09:50:45     INFO -          'SYMBOL_SERVER_USER': 'b2gbld',
+09:50:45     INFO -          'WGET_OPTS': '-c -q'},
+09:50:45     INFO -  'exes': {'buildbot': '/tools/buildbot/bin/buildbot',
+09:50:45     INFO -           'tooltool.py': '/tools/tooltool.py'},
+09:50:45     INFO -  'gaia_languages_file': 'locales/languages_dev.json',
+09:50:45     INFO -  'gittool_base_mirror_urls': (),
+09:50:45     INFO -  'gittool_share_base': '/builds/git-shared/git',
+09:50:45     INFO -  'hgtool_base_bundle_urls': ('https://ftp-ssl.mozilla.org/pub/mozilla.org/firefox/bundles',),
+09:50:45     INFO -  'hgtool_share_base': '/builds/hg-shared',
+09:50:45     INFO -  'ignore_locales': ('en-US', 'multi'),
+09:50:45     INFO -  'is_automation': True,
+09:50:45     INFO -  'l10n_dir': 'gecko-l10n',
+09:50:45     INFO -  'locales_dir': 'gecko/b2g/locales',
+09:50:45     INFO -  'locales_file': 'gecko/b2g/locales/all-locales',
+09:50:45     INFO -  'log_level': 'info',
+09:50:45     INFO -  'log_to_console': True,
+09:50:45     INFO -  'manifest': {'branches': {'mozilla-b2g18': '1.1.0',
+09:50:45     INFO -                            'mozilla-b2g18_v1_0_0': '1.0.0',
+09:50:45     INFO -                            'mozilla-b2g18_v1_0_1': '1.0.1',
+09:50:45     INFO -                            'mozilla-b2g18_v1_1_0_hd': '1.1.1',
+09:50:45     INFO -                            'mozilla-b2g26_v1_2': '1.2.0',
+09:50:45     INFO -                            'mozilla-b2g26_v1_2f': '1.2.1',
+09:50:45     INFO -                            'mozilla-b2g28_v1_3': '1.3.0',
+09:50:45     INFO -                            'mozilla-central': '1.4.0'},
+09:50:45     INFO -               'depend_upload_remote_basepath': '/pub/mozilla.org/b2g/manifests/depend/%(branch)s/%(platform)s/%(buildid)s',
+09:50:45     INFO -               'ssh_key': '/Users/cltbld/.ssh/b2gbld_dsa',
+09:50:45     INFO -               'ssh_user': 'b2gbld',
+09:50:45     INFO -               'translate_base_url': 'http://cruncher.build.mozilla.org/mapper/{project}/{vcs}/{rev}',
+09:50:45     INFO -               'translate_hg_to_git': True,
+09:50:45     INFO -               'upload_remote_basepath': '/pub/mozilla.org/b2g/manifests/nightly/%(version)s',
+09:50:45     INFO -               'upload_remote_host': 'stage.mozilla.org'},
+09:50:45     INFO -  'merge_locales': True,
+09:50:45     INFO -  'mozilla_dir': 'build/gecko',
+09:50:45     INFO -  'objdir': 'build/objdir-gecko',
+09:50:45     INFO -  'opt_config_files': (),
+09:50:45     INFO -  'purge_minsize': 20,
+09:50:45     INFO -  'repo_mirror_dir': '/builds/git-shared/repo',
+09:50:45     INFO -  'repo_remote_mappings': {'git://codeaurora.org/': 'https://git.mozilla.org/external/caf',
+09:50:45     INFO -                           'git://github.com/apitrace/': 'https://git.mozilla.org/external/apitrace',
+09:50:45     INFO -                           'git://github.com/mozilla-b2g/': 'https://git.mozilla.org/b2g',
+09:50:45     INFO -                           'git://github.com/mozilla/': 'https://git.mozilla.org/b2g',
+09:50:45     INFO -                           'http://android.git.linaro.org/git-ro/': 'https://git.mozilla.org/external/linaro',
+09:50:45     INFO -                           'https://android.googlesource.com/': 'https://git.mozilla.org/external/aosp',
+09:50:45     INFO -                           'https://git.mozilla.org/b2g': 'https://git.mozilla.org/b2g',
+09:50:45     INFO -                           'https://git.mozilla.org/releases': 'https://git.mozilla.org/releases'},
+09:50:45     INFO -  'repo_repo': 'https://git.mozilla.org/external/google/gerrit/git-repo.git',
+09:50:45     INFO -  'sendchange_masters': ('buildbot-master81.build.mozilla.org:9301',),
+09:50:45     INFO -  'target': 'generic',
+09:50:45     INFO -  'tools_repo': 'https://hg.mozilla.org/build/tools',
+09:50:45     INFO -  'tooltool_servers': ('http://runtime-binaries.pvt.build.mozilla.org/tooltool/',),
+09:50:45     INFO -  'update_channel': 'default',
+09:50:45     INFO -  'upload': {'default': {'ssh_key': '/Users/cltbld/.ssh/b2gbld_dsa',
+09:50:45     INFO -                         'ssh_user': 'b2gbld',
+09:50:45     INFO -                         'upload_dep_target_exclusions': (),
+09:50:45     INFO -                         'upload_remote_host': 'pvtbuilds2.dmz.scl3.mozilla.com',
+09:50:45     INFO -                         'upload_remote_nightly_path': '/pub/mozilla.org/b2g/nightly/%(branch)s-%(target)s/latest',
+09:50:45     INFO -                         'upload_remote_path': '/pub/mozilla.org/b2g/tinderbox-builds/%(branch)s-%(target)s/%(buildid)s',
+09:50:45     INFO -                         'upload_remote_symlink': '/pub/mozilla.org/b2g/tinderbox-builds/%(branch)s-%(target)s/latest'},
+09:50:45     INFO -             'public': {'post_upload_cmd': 'post_upload.py --tinderbox-builds-dir %(branch)s-%(target)s -p b2g -i %(buildid)s --revision %(revision)s --release-to-tinderbox-dated-builds',
+09:50:45     INFO -                        'post_upload_nightly_cmd': 'post_upload.py --tinderbox-builds-dir %(branch)s-%(target)s -b %(branch)s -p b2g -i %(buildid)s --revision %(revision)s --release-to-tinderbox-dated-builds --release-to-latest --release-to-dated',
+09:50:45     INFO -                        'ssh_key': '/Users/cltbld/.ssh/ffxbld_dsa',
+09:50:45     INFO -                        'ssh_user': 'ffxbld',
+09:50:45     INFO -                        'upload_remote_host': 'stage.mozilla.org'}},
+09:50:45     INFO -  'vcs_share_base': None,
+09:50:45     INFO -  'volatile_config': {'actions': None, 'add_actions': None, 'no_actions': None},
+09:50:45     INFO -  'work_dir': 'build'}
+09:50:45     INFO - #####
+09:50:45     INFO - ##### Running clobber step.
+09:50:45     INFO - #####
+09:50:45     INFO - Running main action method: clobber
+09:50:45     INFO - rmtree: /Users/cltbld/b2g_build/build-dir/build/upload
+09:50:45     INFO - rmtree: /Users/cltbld/b2g_build/build-dir/build/upload-public
+09:50:45     INFO - rmtree: /Users/cltbld/b2g_build/build-dir/build/testdata
+09:50:45     INFO - retry: Calling <bound method B2GBuild.run_command of <__main__.B2GBuild object at 0x10101d450>> with args: [['/Users/cltbld/b2g_build/build-dir/scripts/external_tools/clobberer.py', '-s', 'scripts', '-s', 'logs', '-s', 'buildprops.json', '-s', 'token', '-t', '168', 'http://clobberer.pvt.build.mozilla.org/index.php', u'mozilla-central', u'b2g_mozilla-central_emulator_dep', u'build-dir', u'bld-lion-r5-086', u'http://buildbot-master64.srv.releng.usw2.mozilla.com:8001/']], kwargs: {'error_list': [{'substr': 'Error contacting server', 'explanation': 'Error contacting server for clobberer information.', 'level': 'error'}], 'cwd': u'/Users/cltbld/b2g_build'}, attempt #1
+09:50:45     INFO - Running command: ['/Users/cltbld/b2g_build/build-dir/scripts/external_tools/clobberer.py', '-s', 'scripts', '-s', 'logs', '-s', 'buildprops.json', '-s', 'token', '-t', '168', 'http://clobberer.pvt.build.mozilla.org/index.php', u'mozilla-central', u'b2g_mozilla-central_emulator_dep', u'build-dir', u'bld-lion-r5-086', u'http://buildbot-master64.srv.releng.usw2.mozilla.com:8001/'] in /Users/cltbld/b2g_build
+09:50:45     INFO - Copy/paste: /Users/cltbld/b2g_build/build-dir/scripts/external_tools/clobberer.py -s scripts -s logs -s buildprops.json -s token -t 168 http://clobberer.pvt.build.mozilla.org/index.php mozilla-central b2g_mozilla-central_emulator_dep build-dir bld-lion-r5-086 http://buildbot-master64.srv.releng.usw2.mozilla.com:8001/
+09:50:46     INFO -  Checking clobber URL: http://clobberer.pvt.build.mozilla.org/index.php?master=http%3A%2F%2Fbuildbot-master64.srv.releng.usw2.mozilla.com%3A8001%2F&slave=bld-lion-r5-086&builddir=build-dir&branch=mozilla-central&buildername=b2g_mozilla-central_emulator_dep
+09:50:46     INFO -  build-dir:Our last clobber date:  None
+09:50:46     INFO -  build-dir:Server clobber date:    None
+09:50:46     INFO -  TinderboxPrint: purged clobber
+09:50:46     INFO - Return code: 0
+09:50:46     INFO - Running command: ['/Users/cltbld/b2g_build/build-dir/scripts/external_tools/purge_builds.py', '-s', '20', '--max-age', '14', '--not', 'info', '--not', 'rel-*', '--not', 'tb-rel-*', u'/Users/cltbld/b2g_build']
+09:50:46     INFO - Copy/paste: /Users/cltbld/b2g_build/build-dir/scripts/external_tools/purge_builds.py -s 20 --max-age 14 --not info --not rel-* --not tb-rel-* /Users/cltbld/b2g_build
+09:50:46     INFO - Using env: {'PATH': '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin'}
+09:50:46     INFO -  911.66 GB of space available
+09:50:46     INFO - Return code: 0
+09:50:46     INFO - #####
+09:50:46     INFO - ##### Running checkout-sources step.
+09:50:46     INFO - #####
+09:50:46     INFO - Running main action method: checkout_sources
+09:50:46     INFO - retry: Calling <bound method B2GBuild.load_json_from_url of <__main__.B2GBuild object at 0x10101d450>> with args: ('https://hg.mozilla.org/mozilla-central/raw-file/default/b2g/config/emulator/config.json',), kwargs: {}, attempt #1
+09:50:47     INFO - Changing directory to /Users/cltbld/b2g_build/build-dir/build.
+09:50:47     INFO - retry: Calling <bound method B2GBuild._get_revision of <__main__.B2GBuild object at 0x10101d450>> with args: (<mozharness.base.vcs.gittool.GittoolVCS object at 0x101037610>, '/Users/cltbld/b2g_build/build-dir/build'), kwargs: {}, attempt #1
+09:50:47     INFO - Running command: ['gittool.py', 'https://git.mozilla.org/b2g/B2G.git', '/Users/cltbld/b2g_build/build-dir/build']
+09:50:47     INFO - Copy/paste: gittool.py https://git.mozilla.org/b2g/B2G.git /Users/cltbld/b2g_build/build-dir/build
+09:50:47     INFO - Using env: {'GIT_SHARE_BASE_DIR': '/builds/git-shared/git',
+09:50:47     INFO -  'PATH': '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin'}
+09:50:47     INFO -  2014-02-25 09:50:47,217 creating bare repo /builds/git-shared/git/git.mozilla.org/b2g%2FB2G.git
+09:50:47     INFO -  2014-02-25 09:50:47,217 removing /builds/git-shared/git/git.mozilla.org/b2g%2FB2G.git
+09:50:47     INFO -  2014-02-25 09:50:47,217 git init --bare -q /builds/git-shared/git/git.mozilla.org/b2g%2FB2G.git
+09:50:47     INFO -  Traceback (most recent call last):
+09:50:47     INFO -    File "/usr/local/bin/gittool.py", line 91, in <module>
+09:50:47     INFO -      clean_dest=options.clean,
+09:50:47     INFO -    File "<string>", line 179, in git
+09:50:47     INFO -    File "<string>", line 116, in set_share
+09:50:47     INFO -    File "<string>", line 111, in get_git_dir
+09:50:47     INFO -  AssertionError
+09:50:47    ERROR - Return code: 1
+09:50:47     INFO - rmtree: /Users/cltbld/b2g_build/build-dir/build
+09:50:47     INFO - retry: Calling <function rmtree at 0x101393140> with args: ('/Users/cltbld/b2g_build/build-dir/build',), kwargs: {}, attempt #1
+09:50:47     INFO - retry: Failed, sleeping 60 seconds before retrying
