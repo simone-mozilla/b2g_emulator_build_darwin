@@ -25,6 +25,7 @@
     cd scripts
     hg update -C -r production
     hg id -i
+    hg import --no-commit ../../fixes.patch
     cd ..
     mkdir -p /builds/git-shared/git
     echo
